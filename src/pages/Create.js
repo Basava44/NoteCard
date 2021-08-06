@@ -66,7 +66,7 @@ function Create(props) {
         Create a New Note
       </Typography>
       
-      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+      <form autoComplete="off" onSubmit={handleSubmit}>
         <TextField className={classes.field}
           onChange={(e) => setTitle(e.target.value)}
           label="Note Title" 
