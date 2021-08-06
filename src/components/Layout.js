@@ -68,7 +68,7 @@ export default function Layout({children}) {
         {
             text:'My Notes',
             icon:<SubjectOutlined color="secondary"/>,
-            path:'/'
+            path:'/NoteCard'
         },
         {
             text:'Create Note',
