@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/NoteCard/static/css/main.b5910476.chunk.css",
-    "main.js": "/NoteCard/static/js/main.6c57b500.chunk.js",
-    "main.js.map": "/NoteCard/static/js/main.6c57b500.chunk.js.map",
+    "main.js": "/NoteCard/static/js/main.879bd189.chunk.js",
+    "main.js.map": "/NoteCard/static/js/main.879bd189.chunk.js.map",
     "runtime-main.js": "/NoteCard/static/js/runtime-main.80ead4fe.js",
     "runtime-main.js.map": "/NoteCard/static/js/runtime-main.80ead4fe.js.map",
     "static/js/2.42e90d95.chunk.js": "/NoteCard/static/js/2.42e90d95.chunk.js",
@@ -12,12 +12,12 @@
     "index.html": "/NoteCard/index.html",
     "static/css/main.b5910476.chunk.css.map": "/NoteCard/static/css/main.b5910476.chunk.css.map",
     "static/js/2.42e90d95.chunk.js.LICENSE.txt": "/NoteCard/static/js/2.42e90d95.chunk.js.LICENSE.txt",
-    "static/media/image.a10992f6.png": "/NoteCard/static/media/image.a10992f6.png"
+    "static/media/image.e582e4ba.png": "/NoteCard/static/media/image.e582e4ba.png"
   },
   "entrypoints": [
     "static/js/runtime-main.80ead4fe.js",
     "static/js/2.42e90d95.chunk.js",
     "static/css/main.b5910476.chunk.css",
-    "static/js/main.6c57b500.chunk.js"
+    "static/js/main.879bd189.chunk.js"
   ]
 }
