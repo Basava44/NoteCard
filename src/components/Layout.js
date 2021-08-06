@@ -27,6 +27,7 @@ const useStyles = makeStyles( (theme) => {
             width : '100%',
             padding : 20,
             marginTop:60,
+            overflowX : "hidden"
         },
         drawer:{
             width : drawerWidth

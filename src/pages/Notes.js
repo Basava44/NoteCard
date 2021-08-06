@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import  Grid  from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import { connect } from 'react-redux';
 
 import NoteCard from '../components/NoteCard';
 import Masonry from 'react-masonry-css';
 
 
-export default function Notes() {
-  const [notes, setNotes] = useState([]);
+
+const Notes = (props) => {
+    const [notes, setNotes] = useState([]);
   
   useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/comments')
@@ -21,6 +22,7 @@ export default function Notes() {
     setNotes(newnotes);
     
   }
+  
 
   const breakpoints ={
     default : 3,
@@ -43,5 +45,27 @@ export default function Notes() {
       ))}
      </Masonry>
     </Container>
-  )
+  );
 }
+ 
+
+// const mapStateToProps = (state) =>{
+//   return {
+//       count: state.count
+//   }
+// }
+
+// const mapDispatchToProps = (dispatch) =>{
+//   return{
+//       increment : () =>{
+//           dispatch({type:"INCREMENT"})
+//       },
+//       zero : () =>{
+//           dispatch({type:"ZERO"})
+//       }
+//   }
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Notes);
+
+export default Notes;
