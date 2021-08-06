@@ -11,6 +11,7 @@ import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
 import FormLabel from '@material-ui/core/FormLabel'
+import { connect } from 'react-redux'
 
 const useStyles = makeStyles({
   field: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles({
   }
 })
 
-export default function Create() {
+function Create(props) {
   const classes = useStyles()
   const [title, setTitle] = useState('')
   const [details, setDetails] = useState('')
@@ -40,7 +41,12 @@ export default function Create() {
       setDetailsError(true)
     }
     if (title && details) {
-      console.log(title, details, category)
+      const data = {
+        title:title,
+        content:details,
+        category:category
+      }
+      props.adddata(data);
     } 
   }
 
@@ -83,10 +89,10 @@ export default function Create() {
         <FormControl className={classes.field}>
           <FormLabel>Note Category</FormLabel>
           <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
-            <FormControlLabel value="money" control={<Radio />} label="Money" />
-            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
-            <FormControlLabel value="reminders" control={<Radio />} label="Reminders" />
-            <FormControlLabel value="work" control={<Radio />} label="Work" />
+            <FormControlLabel value="Money" control={<Radio />} label="Money" />
+            <FormControlLabel value="Todos" control={<Radio />} label="Todos" />
+            <FormControlLabel value="Reminders" control={<Radio />} label="Reminders" />
+            <FormControlLabel value="Work" control={<Radio />} label="Work" />
           </RadioGroup>
         </FormControl>
 
@@ -103,3 +109,13 @@ export default function Create() {
     </Container>
   )
 }
+
+const mapDispatchToProps = (dispatch) =>{
+  return {
+    adddata : (notes) =>{
+      dispatch({type:"ADD_DATA",notes})
+    }
+  }
+}
+
+export default connect(null,mapDispatchToProps)(Create);

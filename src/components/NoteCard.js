@@ -13,13 +13,13 @@ import { blue, green, pink, yellow } from '@material-ui/core/colors';
 const useStyles = makeStyles({
     avatar : {
         backgroundColor:(note) => {
-            if(note.postId == 1){
+            if(note.category == "Work"){
                 return yellow[700]
             }
-            if(note.postId == 2){
+            if(note.category == "Remainders"){
                 return green[500]
             }
-            if(note.postId == 3){
+            if(note.category == "Money"){
                 return pink[500]
             }
             return blue[500 ]
@@ -36,21 +36,21 @@ const NoteCard = ({note, handelDelete}) => {
             <CardHeader 
                 avatar={
                     <Avatar className={classes.avatar}>
-                        {note.postId}
+                        {note.category[0].toUpperCase()}
                     </Avatar>
                 }
                 action={
-                    <IconButton onClick={()=> handelDelete(note.id)}>
+                    <IconButton onClick={()=> handelDelete(note.title)}>
                         <DeleteOutlined />
                     </IconButton>
                 }
-                title={note.name}
-                subheader={note.email}
+                title={note.title}
+                subheader={note.category}
             />
 
             <CardContent>
                 <Typography variant="body2" color="textSecondary">
-                    {note.body}
+                    {note.content}
                 </Typography>
             </CardContent>
         </Card>

@@ -8,19 +8,15 @@ import Masonry from 'react-masonry-css';
 
 
 const Notes = (props) => {
-    const [notes, setNotes] = useState([]);
+    const [notes, setNotes] = useState(props.notes)
+
+    // const notes = props.notes;
   
-  useEffect(()=>{
-    fetch('https://jsonplaceholder.typicode.com/comments')
-    .then(response => response.json())
-    .then(json => setNotes(json))
-  },[])
 
-  const handelDelete = (id) => {
-
-    const newnotes = notes.filter(note => note.id!=id);
+  const handelDelete = (title) => {
+    const newnotes = notes.filter(note => note.title!=title);
     setNotes(newnotes);
-    
+    props.delete(title);
   }
   
 
@@ -38,7 +34,7 @@ const Notes = (props) => {
         columnClassName = "my-masonry-grid_column"
       >
       {notes.map(note => (
-        <div item key={note.id}> 
+        <div item key={Math.random()}> 
           <NoteCard note={note} handelDelete={handelDelete} />
         </div>
 
@@ -49,23 +45,20 @@ const Notes = (props) => {
 }
  
 
-// const mapStateToProps = (state) =>{
-//   return {
-//       count: state.count
-//   }
-// }
+const mapStateToProps = (state) =>{
+  return {
+      notes: state.data
+  }
+}
 
-// const mapDispatchToProps = (dispatch) =>{
-//   return{
-//       increment : () =>{
-//           dispatch({type:"INCREMENT"})
-//       },
-//       zero : () =>{
-//           dispatch({type:"ZERO"})
-//       }
-//   }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return{
+    delete : (notes) =>{
+      dispatch({type:"EDIT_DATA", notes})
+    }
+  }
+}
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Notes);
+export default connect(mapStateToProps,mapDispatchToProps)(Notes);
 
-export default Notes;
+// export default Notes;
