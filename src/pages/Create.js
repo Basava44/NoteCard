@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { withRouter } from 'react-router'
 
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
@@ -27,10 +28,11 @@ function Create(props) {
   const [details, setDetails] = useState('')
   const [titleError, setTitleError] = useState(false)
   const [detailsError, setDetailsError] = useState(false)
-  const [category, setCategory] = useState('money')
+  const [category, setCategory] = useState('Money')
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log(e);
     setTitleError(false)
     setDetailsError(false)
 
@@ -48,6 +50,9 @@ function Create(props) {
       }
       props.adddata(data);
     } 
+
+    props.history.push("/NoteCard");
+
   }
 
   return (
@@ -118,4 +123,4 @@ const mapDispatchToProps = (dispatch) =>{
   }
 }
 
-export default connect(null,mapDispatchToProps)(Create);
+export default withRouter(connect(null,mapDispatchToProps)(Create));

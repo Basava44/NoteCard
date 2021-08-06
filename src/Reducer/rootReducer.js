@@ -14,6 +14,11 @@ const initState = {
             title:"Deveop Skills",
             content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, expedita facere ex deserunt ut sit sapiente aliquid! Porro, velit quos?",
             category:"Money"
+        },
+        {
+            title:"Learn React and Redux",
+            content :" Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quas suscipit atque facere reiciendis fuga?",
+            category : "Todos"
         }
     ]
 }

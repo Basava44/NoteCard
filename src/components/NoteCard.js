@@ -16,7 +16,7 @@ const useStyles = makeStyles({
             if(note.category == "Work"){
                 return yellow[700]
             }
-            if(note.category == "Remainders"){
+            if(note.category == "Reminders"){
                 return green[500]
             }
             if(note.category == "Money"){
